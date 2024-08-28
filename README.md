@@ -24,7 +24,7 @@ Here’s a quick demo of how the project works:
 
 ### Image Example
 
-![Project Screenshot](./ChatBot.png)
+![Project Screenshot](./chatbot-ui-screenshot.png)
 
 ### Video Example
 
