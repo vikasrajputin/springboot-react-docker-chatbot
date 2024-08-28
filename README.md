@@ -56,20 +56,20 @@ cd spring-ai-chatbot
 
 The project is organized into two main directories:
 
-- **backend/**: Contains the Spring Boot application with Spring AI integration.
-- **frontend/**: Contains the React application that serves as the chatbot interface.
+- **spring-boot-ai-chatbot/**: Contains the Spring Boot application with Spring AI integration.
+- **chatbot-ui/**: Contains the React application that serves as the chatbot interface.
 
 ### Setting Up the Environment
 
 Before running the application, make sure to set up the environment variables for accessing the OpenAI API.
 
-1. **Create a `.env` file in the `backend` directory**:
+1. **Create a `.env` file in the `spring-boot-ai-chatbot` directory**:
 
     ```bash
     OPENAI_API_KEY=your_openai_api_key
     ```
 
-2. **(Optional) Create a `.env` file in the `frontend` directory if needed**.
+2. **(Optional) Create a `.env` file in the `chatbot-ui` directory if needed**.
 
 ### Running the Application with Docker
 
@@ -90,27 +90,26 @@ The project is fully dockerized, making it easy to run both the frontend and bac
 
 #### Backend (Spring Boot)
 
-1. **Navigate to the `backend/` directory**:
+1. **Navigate to the `spring-boot-ai-chatbot/` directory**:
 
     ```bash
-    cd backend
+    cd spring-boot-ai-chatbot/
     ```
 
 2. **Build and run the Spring Boot application**:
 
     ```bash
-    ./mvnw clean install
-    java -jar target/spring-ai-chatbot.jar
+    ./mvnw clean install spring-boot:run
     ```
 
 3. **Access the backend API**: `http://localhost:8080`
 
 #### Frontend (React)
 
-1. **Navigate to the `frontend/` directory**:
+1. **Navigate to the `chatbot-ui/` directory**:
 
     ```bash
-    cd frontend
+    cd chatbot-ui
     ```
 
 2. **Install the dependencies**:
@@ -149,42 +148,26 @@ The backend provides the following key API endpoints:
 
 ### Modifying the Frontend
 
-- The React frontend is located in the `frontend/` directory.
+- The React frontend is located in the `chatbot-ui/` directory.
 - You can customize the UI by editing the components in the `src/` directory.
 - Update the styling by modifying the `Chatbot.css` file.
 
 ### Modifying the Backend
 
-- The Spring Boot backend is located in the `backend/` directory.
+- The Spring Boot backend is located in the `spring-boot-ai-chatbot/` directory.
 - You can customize the AI responses by modifying the services and controllers in the `src/main/java` directory.
-- Update the Spring AI configuration in the `application.properties` or `application.yml` file.
+- Update the Spring AI configuration in the `application.yml` file.
 
 ## Deployment
 
-### Docker Deployment
+### Docker Deployment on Local
 
-To deploy the application to a production environment, you can use the Docker images built with the provided Dockerfiles.
+To deploy the application to a local environment, you can use the Docker images built with the provided Dockerfiles.
 
 1. **Build the Docker images**:
 
     ```bash
     docker-compose build
-    ```
-
-2. **Push the images to a Docker registry** (if using a registry like Docker Hub or AWS ECR):
-
-    ```bash
-    docker tag spring-ai-chatbot-backend yourusername/spring-ai-chatbot-backend
-    docker push yourusername/spring-ai-chatbot-backend
-    
-    docker tag spring-ai-chatbot-frontend yourusername/spring-ai-chatbot-frontend
-    docker push yourusername/spring-ai-chatbot-frontend
-    ```
-
-3. **Run the containers in the production environment**:
-
-    ```bash
-    docker-compose -f docker-compose.prod.yml up -d
     ```
 
 ### Manual Deployment (Without Docker)
@@ -195,14 +178,3 @@ To deploy the application to a production environment, you can use the Docker im
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
-
-## Contact
-
-If you have any questions or need further assistance, feel free to reach out:
-
-- **Email**: your-email@example.com
-- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
-
----
-
-You can now save this README as `README.md` in your project’s root directory. This document will help users and developers understand your project, how to set it up, and how to contribute. Make sure to update the placeholders with your actual information, such as repository URLs, Docker image names, and contact details.
