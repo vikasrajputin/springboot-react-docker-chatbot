@@ -1,70 +1,208 @@
-# Getting Started with Create React App
+# spring-boot-ai-chatbot
+Your friendly personal assistant powered by OpenAI
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Here’s a detailed README file template for your project. This template covers the main aspects of your project, including an overview, installation steps, usage instructions, and more. You can customize it further according to your project’s specifics.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Spring AI Chatbot Learning Application
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This project is a full-stack web application built with Spring Boot, Spring AI, React, and Docker. It serves as a learning tool for developers who want to get hands-on experience with Spring AI, leveraging the OpenAI API to create an intelligent chatbot. The chatbot can assist users in learning more about Spring AI by answering questions and providing information based on user queries.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Features
 
-### `npm test`
+- **Interactive Chatbot**: Engage with a chatbot to learn more about Spring AI and how to integrate it with your Spring Boot applications.
+- **Spring Boot Backend**: A robust backend powered by Spring Boot, utilizing Spring AI for processing and generating responses using the OpenAI API.
+- **React Frontend**: A user-friendly and responsive frontend built with React, providing an intuitive interface to interact with the chatbot.
+- **Dockerized Setup**: Both the frontend and backend are containerized using Docker, allowing easy setup and deployment.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Tech Stack
 
-### `npm run build`
+- **Backend**: 
+  - Java 17
+  - Spring Boot
+  - Spring AI
+  - OpenAI API
+- **Frontend**:
+  - React
+  - HTML5 & CSS3
+  - Axios
+  - Nginx (for serving the React app)
+- **DevOps**:
+  - Docker
+  - Docker Compose
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Prerequisites
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Before you begin, ensure you have the following installed on your machine:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Docker](https://www.docker.com/products/docker-desktop)
+- [Docker Compose](https://docs.docker.com/compose/install/)
+- [Java 17](https://adoptopenjdk.net/) (if running the Spring Boot app locally)
+- [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) (if running the React app locally)
 
-### `npm run eject`
+## Getting Started
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Clone the Repository
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+git clone https://github.com/vikasrajputin/spring-ai-chatbot.git
+cd spring-ai-chatbot
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Project Structure
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+The project is organized into two main directories:
 
-## Learn More
+- **backend/**: Contains the Spring Boot application with Spring AI integration.
+- **frontend/**: Contains the React application that serves as the chatbot interface.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Setting Up the Environment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Before running the application, make sure to set up the environment variables for accessing the OpenAI API.
 
-### Code Splitting
+1. **Create a `.env` file in the `backend` directory**:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    ```bash
+    OPENAI_API_KEY=your_openai_api_key
+    ```
 
-### Analyzing the Bundle Size
+2. **(Optional) Create a `.env` file in the `frontend` directory if needed**.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Running the Application with Docker
 
-### Making a Progressive Web App
+The project is fully dockerized, making it easy to run both the frontend and backend together.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. **Build and run the containers**:
 
-### Advanced Configuration
+    ```bash
+    docker-compose up --build
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+2. **Access the application**:
 
-### Deployment
+    - The Spring Boot application (backend) will be available at: `http://localhost:8080`
+    - The React application (frontend) will be available at: `http://localhost:3000`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Running the Applications Locally (Without Docker)
 
-### `npm run build` fails to minify
+#### Backend (Spring Boot)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. **Navigate to the `backend/` directory**:
+
+    ```bash
+    cd backend
+    ```
+
+2. **Build and run the Spring Boot application**:
+
+    ```bash
+    ./mvnw clean install
+    java -jar target/spring-ai-chatbot.jar
+    ```
+
+3. **Access the backend API**: `http://localhost:8080`
+
+#### Frontend (React)
+
+1. **Navigate to the `frontend/` directory**:
+
+    ```bash
+    cd frontend
+    ```
+
+2. **Install the dependencies**:
+
+    ```bash
+    npm install
+    ```
+
+3. **Start the React application**:
+
+    ```bash
+    npm start
+    ```
+
+4. **Access the frontend**: `http://localhost:3000`
+
+### API Endpoints
+
+The backend provides the following key API endpoints:
+
+- **`GET /ai/chat/string`**: Accepts a `message` query parameter and returns a response generated by the AI model.
+  - **Example**: `http://localhost:8080/ai/chat/string?message=Tell me about Spring AI`
+  
+- **`POST /ai/chat`**: Accepts a JSON body with a `message` field and returns a response generated by the AI model.
+  - **Example**:
+    ```json
+    POST http://localhost:8080/ai/chat
+    Content-Type: application/json
+    
+    {
+      "message": "Explain how to use OpenAI with Spring Boot"
+    }
+    ```
+
+## Customization
+
+### Modifying the Frontend
+
+- The React frontend is located in the `frontend/` directory.
+- You can customize the UI by editing the components in the `src/` directory.
+- Update the styling by modifying the `Chatbot.css` file.
+
+### Modifying the Backend
+
+- The Spring Boot backend is located in the `backend/` directory.
+- You can customize the AI responses by modifying the services and controllers in the `src/main/java` directory.
+- Update the Spring AI configuration in the `application.properties` or `application.yml` file.
+
+## Deployment
+
+### Docker Deployment
+
+To deploy the application to a production environment, you can use the Docker images built with the provided Dockerfiles.
+
+1. **Build the Docker images**:
+
+    ```bash
+    docker-compose build
+    ```
+
+2. **Push the images to a Docker registry** (if using a registry like Docker Hub or AWS ECR):
+
+    ```bash
+    docker tag spring-ai-chatbot-backend yourusername/spring-ai-chatbot-backend
+    docker push yourusername/spring-ai-chatbot-backend
+    
+    docker tag spring-ai-chatbot-frontend yourusername/spring-ai-chatbot-frontend
+    docker push yourusername/spring-ai-chatbot-frontend
+    ```
+
+3. **Run the containers in the production environment**:
+
+    ```bash
+    docker-compose -f docker-compose.prod.yml up -d
+    ```
+
+### Manual Deployment (Without Docker)
+
+- **Backend**: Deploy the Spring Boot jar to a server or cloud service (e.g., AWS EC2, Heroku).
+- **Frontend**: Build the React app (`npm run build`) and serve it using a web server (e.g., Nginx, Apache).
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
+
+## Contact
+
+If you have any questions or need further assistance, feel free to reach out:
+
+- **Email**: your-email@example.com
+- **LinkedIn**: [Your LinkedIn Profile](https://www.linkedin.com/in/yourprofile)
+
+---
+
+You can now save this README as `README.md` in your project’s root directory. This document will help users and developers understand your project, how to set it up, and how to contribute. Make sure to update the placeholders with your actual information, such as repository URLs, Docker image names, and contact details.
