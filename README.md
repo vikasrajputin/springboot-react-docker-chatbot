@@ -18,6 +18,21 @@ This project is a full-stack web application built with Spring Boot, Spring AI, 
 - **React Frontend**: A user-friendly and responsive frontend built with React, providing an intuitive interface to interact with the chatbot.
 - **Dockerized Setup**: Both the frontend and backend are containerized using Docker, allowing easy setup and deployment.
 
+## Demo
+
+Here’s a quick demo of how the project works:
+
+### Image Example
+
+![Project Screenshot](./ChatBot.png)
+
+### Video Example
+
+Watch the demo video:
+
+![Watch the video](./chatbot.gif.gif)
+
+
 ## Tech Stack
 
 - **Backend**: 
